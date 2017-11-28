@@ -11,17 +11,26 @@ in the source repository.
 Usage
 ---------------------
 
-For this to work you need to have S2I installed: https://github.com/openshift/source-to-image
+_IMPORTANT: for this to work you need to have S2I installed: https://github.com/openshift/source-to-image_
+
+If you just want a very quick simple example, try this:
 
 ```
-s2i build https://github.com/quintesse/s2i-asciidoc.git --context-dir=test/adoc-sample/ quintesse/s2i-asciidoc adoc-sample
+s2i build https://github.com/quintesse/s2i-asciidoc.git --context-dir=test/adoc-sample/ quintesse/s2i-asciidoc adoc-sample-image
 ```
+
+This will look for any Asciidoc files in the `adoc` folder in the repository https://github.com/quintesse/s2i-asciidoc/tree/master/test/adoc-sample
+and convert all of it to HTML. It will then generate a local Docker image called `adoc-sample-image` containing all that HTML and an HTTP server.
 
 You can then run the resulting image via:
 
 ```
-docker run -p 8080:8080 adoc-sample
+docker run -p 8080:8080 adoc-sample-image
 ```
+
+Which will make the generated HTML available in your browser at:
+
+http://localhost:8080
 
 Environment variables
 ---------------------
