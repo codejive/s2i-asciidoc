@@ -1,0 +1,6 @@
+#!/bin/bash
+
+OUTPUT_DIR=${OUTPUT_DIR:-html}
+
+exec ruby -run -ehttpd $OUTPUT_DIR -p8080
+

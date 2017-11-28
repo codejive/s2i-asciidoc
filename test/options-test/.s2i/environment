@@ -1,0 +1,2 @@
+ASCIIDOCTOR_OPTIONS=-b xhtml5
+

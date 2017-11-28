@@ -1,0 +1,17 @@
+#!/bin/bash
+
+ADOC_DIR=${ADOC_DIR:-adoc}
+OUTPUT_DIR=${OUTPUT_DIR:-html}
+ASCIIDOCTOR_OPTIONS=${ASCIIDOCTOR_OPTIONS:--t}
+
+OUT=$(readlink -f $OUTPUT_DIR)
+
+echo "---> Generating HTML from Asciidoc..."
+
+cd /tmp/src/$ADOC_DIR
+FILES=*
+for adoc_file in $FILES
+do
+	asciidoctor $ASCIIDOCTOR_OPTIONS $adoc_file -D $OUT
+done
+
