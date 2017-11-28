@@ -1,0 +1,60 @@
+{
+  "kind": "ImageStreamList",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "asciidoc-builder-image-streams",
+    "anotations": {
+      "description": "ImageStream definitions for Asciidoc builders."
+    }
+  },
+  "items": [
+    {
+      "kind": "ImageStream",
+      "apiVersion": "v1",
+      "metadata": {
+        "name": "asciidoc-builder",
+        "annotations": {
+          "openshift.io/display-name": "Asciidoc Builder"
+        }
+      },
+      "spec": {
+        "tags": [
+          {
+            "name": "latest",
+            "annotations": {
+              "openshift.io/display-name": "Asciidoc Builder (Latest)",
+              "description": "This is an S2I builder image that takes Asciidoc files from a source repository, converts them into HTML using Asciidoctor and serves them up using a simple HTTP server.",
+              "iconClass": "icon-asciidoc",
+              "tags": "builder,asciidoc",
+              "supports": "asciidoc-builder:1.0,asciidoc-builder",
+              "sampleRepo": "https://github.com/quintesse/s2i-asciidoc.git",
+              "sampleRef": "1.0"
+            },
+            "from": {
+              "kind": "ImageStreamTag",
+              "name": "1.0"
+            }
+          },
+          {
+            "name": "1.0",
+            "annotations": {
+              "openshift.io/display-name": "Asciidoc Builder 1.0",
+              "description": "Build and serve Asciidoc files. For more information about using this builder image, including OpenShift considerations, see https://github.com/quintesse/s2i-asciidoc/blob/master/README.md",
+              "iconClass": "icon-asciidoc",
+              "tags": "builder,asciidoc-builder",
+              "supports": "asciidoc-builder:1.0,asciidoc-builder",
+              "version": "1.0",
+              "sampleRepo": "https://github.com/quintesse/s2i-asciidoc.git",
+              "sampleRef": "1.0"
+            },
+            "from": {
+              "kind": "DockerImage",
+              "name": "quintesse/s2i-asciidoc:1.0"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

@@ -52,3 +52,18 @@ file inside your source code repository.
 
     This variable can be used to pass any extra options to the `asciidoctor` command.
 
+OpenShift Manual Setup
+---------------------
+
+If you want to use the S2I Asciidoc builder image properly in an OpenShift v3 server then follow these steps in the web console:
+
+ - Log in to the OpenShift console
+ - Select or create a project
+ - Click the "Add to Project" button
+ - Select the "Import YAML / JSON" tab
+ - Copy & paste the contents of the [image-streams.json](https://github.com/quintesse/s2i-asciidoc/blob/master/image-streams.json) file into the text box
+ - Click the "Create" button
+
+Now whenever you go back to the "Add to Project" screen there should be an entry for the "Asciidoc Builder".
+
+
