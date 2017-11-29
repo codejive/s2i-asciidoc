@@ -9,7 +9,7 @@ OUT=$(readlink -f $OUTPUT_DIR)
 echo "---> Generating HTML from Asciidoc..."
 
 cd /tmp/src/$ADOC_DIR
-FILES=*
+FILES=`ls *.adoc *.asciidoc`
 for adoc_file in $FILES
 do
 	asciidoctor $ASCIIDOCTOR_OPTIONS $adoc_file -D $OUT
