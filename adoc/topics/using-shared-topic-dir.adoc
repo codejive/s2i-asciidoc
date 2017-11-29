@@ -1,0 +1,21 @@
+[[using-shared-topics-directory]]
+= Using a Shared Topics Directory
+
+If you have content you want to use in multiple locations, you can create subdirectory in your `adoc` folder and put your content there. From there, you can use the `include` directive to use that content.
+
+For example, if you the following layout:
+
+* adoc/
+** index.adoc
+** page1.adoc
+** topics/
+*** common-content.adoc
+
+you would use the following to include `common-content.adoc` in `index.adoc` or `page1.adoc`:
+
+[source,adoc,options="nowrap"]
+----
+ include::topics/using-shared-topics-dir.adoc[]
+----
+
+You can find more details on using the `include` directive in the link:http://asciidoctor.org/docs/user-manual/#include-directive[Asciidoctor documentation].
