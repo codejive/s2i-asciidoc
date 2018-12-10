@@ -79,4 +79,4 @@ file into the text box
 Now whenever you go back to the ``Add to Project'' screen there should
 be an entry for the ``Asciidoc Builder''.
 
-include::topics/using-shared-topics-dir.adoc[leveloffset=+1]
+include::topics/using-shared-topic-dir.adoc[leveloffset=+1]
